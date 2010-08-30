@@ -1,4 +1,13 @@
-/* RataOS Task Scheduler */
+/*******************************************************************************
+* RataOS Task Scheduler
+* File 				: messages.c
+* Description   	: Provides the framework for the OS messaging system.
+* Revision History	: Unreleased
+* License			: Eclipse Public License
+*					  http://www.opensource.org/licenses/eclipse-1.0.php
+* Author			: Oliver Kent
+* Project Location	: http://rataos.sourceforge.net/
+*******************************************************************************/
 
 /* System Parameters */
 #define MAX_MESSAGES_ROS				32u
