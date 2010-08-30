@@ -73,23 +73,10 @@ uint8_t CreateMessage_ROS
 		)
 {
 	/* Check if message target vector is within range */
-	if(target_vector > MAX_TASKS_ROS)
-	{
-		/* Task vector too high, return failure */
-		return F_TASK_VECTOR_TOO_HIGH_ROS;
-	}
-	/* Check if message target is a valid task */
-	else if(*gTaskPointerArray_RS[target_vector] == NULL_POINTER_ROS)
-	{
-		/* Task vector empty, return failure */
-		return F_TASK_VECTOR_EMPTY_ROS;
-	}			
-	/* Check if message id is unused */
-	else if(gMessageIDLookupArray_ROS[message_id] != NULL_VALUE_ROS)
-	{
-		/* Task id is already in use, return failure */
-		return F_MESSAGE_ID_OCCUPIED_ROS;
-	}
+
+
+
+
 	/* Check if maximum number of messages have been reached */
 	else if(gNumberMessages == MAX_MESSAGES_ROS)
 	{
@@ -229,3 +216,72 @@ uint8_t ReadMessage_ROS
 *******************************************************************************/	
 		
 		
+uint8_t DestroyMessage_ROS
+		(
+			uint8_t message_id,
+			uint8_t
+			
+			
+			
+/* Shift all messages down when deleting a task? */
+/* Queue shift activity? Count total wasted bytes, and perform shuffle if it
+   exceeds a threshold perhaps? Need an algorithm to perform multiple shifts
+   in each sweep */			
+			
+			
+			
+			
+uint8_t _IsMessageIDValid_ROS
+		(
+			uint8_t message_id
+		)
+{
+	if(message_id > MAX_MESSAGE_ID_ROS)
+	{
+		return F_MESSAGE_ID_TOO_HIGH_ROS;
+	}
+	else if(message_id < MIN_MESSAGE_ID_ROS)
+	{
+		return F_MESSAGE_ID_TOO_LOW_ROS;
+	}
+	else
+	{
+		return TRUE_ROS;
+	}
+}
+
+uint8_t _IsMessageIDEmpty_ROS
+		(
+			uint8_t message_id
+		)
+{
+	uint8_t message_id_valid = _IsMessageIDValid_ROS(message_id);
+	
+	if(message_id_valid != TRUE_ROS)
+	{
+		return message_id_valid;
+	}
+	else if(gMessageIDLookupArray_ROS[message_id] == NULL_MESSAGE_ROS)
+	{
+		return FALSE_ROS;
+	}
+	else
+	{
+		return TRUE_ROS;
+	}
+}
+
+uint8_t _IsMessageSizeValid_ROS
+		(
+			uint8_t message_size
+		)
+{
+	if(message_size > MAX_MESSAGE_BYTES_ROS)
+	{
+		return F_MESSAGE_SIZE_TOO_LARGE_ROS;
+	}
+	else
+	{
+		return TRUE_ROS;
+	}
+}
