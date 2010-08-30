@@ -1,0 +1,69 @@
+API Functions
+-------------
+
+Task Functions:
+
+	TaskCreate_ROS
+
+	TaskDestroy_ROS
+
+	ProtectTask_ROS
+
+	ControlSleepTask_ROS
+	
+	TaskStatus_ROS
+	
+	...
+	
+Message Functions:
+
+	CreateMessage_ROS
+	
+	ReadMessage_ROS
+	
+	DestroyMessage_ROS
+	
+	EditMessage_ROS
+	
+	OptimizeMessageStorage_ROS (name?)
+	
+	...
+	
+Schedule Functions:
+
+	QueueTask_ROS
+	
+	CreatePeriodicTask_ROS
+	
+	ControlPeriodicTask_ROS
+	
+	DestroyPeriodicTask_ROS
+	
+	CreateISRTask_ROS
+	
+	ControlISRTask_ROS
+	
+	DestroyISRTask_ROS
+	
+Internal Dev. Functions:
+
+	_IsValidTask_ROS
+	
+	_IsTaskEmpty_ROS
+	
+	_IsTaskSleep_ROS
+	
+	_IsTaskQueued_ROS
+	
+	_IsValidMessage_ROS
+	
+	_IsMessageGlobal_ROS
+	
+	_WhoIsMessageOwner_ROS
+	
+	_HowLongToLiveMessage_ROS
+	
+	_HowLongToLiveTask_ROS
+	
+
+	
