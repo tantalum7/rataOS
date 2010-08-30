@@ -1,4 +1,13 @@
-/* RataOS Task Scheduler */
+/*******************************************************************************
+* RataOS Task Scheduler
+* File 				: tasks.c
+* Description   	: Task adminstration API definitions.
+* Revision History	: Unreleased
+* License			: Eclipse Public License
+*					  http://www.opensource.org/licenses/eclipse-1.0.php
+* Author			: Oliver Kent
+* Project Location	: http://rataos.sourceforge.net/
+*******************************************************************************/
 
 #include <string.h>
 #include <type.h>
